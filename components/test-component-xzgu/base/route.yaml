@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-component-xzgu
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-component-xzgu
+    app.kubernetes.io/part-of: test-app-qozd
+  name: test-component-xzgu
+  namespace: build-e2e-hacbs-vudz
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: test-component-xzgu
+    weight: 100
+status: {}
